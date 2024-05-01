@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Educational Blog</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-color: #001f3f; /* Deep navy blue background */
+            color: #ffffff; /* White text for contrast */
+            font-family: 'Arial', sans-serif; /* Modern, clean font */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Vertical stacking */
+            padding: 40px; /* Spacious padding */
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between; /* Evenly spaced elements */
+            align-items: center; /* Align items vertically */
+            padding-bottom: 40px; /* Padding at the bottom for separation */
+            border-bottom: 2px solid #00aaff; /* Cyan border for separation */
+        }
+
+        .text-section {
+            flex: 1; /* Equal distribution of space */
+            padding: 20px;
+            border-left: 4px solid #00aaff; /* Cyan accent line */
+        }
+
+        .photo-section {
+            flex: 1; /* Equal distribution of space */
+            text-align: center; /* Centered image */
+        }
+
+        .photo-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px; /* Rounded corners */
+            border: 2px solid #00aaff; /* Cyan border */
+            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 32px; /* Larger heading */
+            font-weight: bold;
+            color: #00aaff; /* Cyan accent */
+            text-align: center; /* Centered heading */
+            margin-bottom: 20px; /* Space below heading */
+        }
+
+        p {
+            font-size: 20px; /* Readable font size */
+            margin-bottom: 30px; /* Space between text elements */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+        }
+
+        .button {
+            background-color: #00aaff; /* Cyan button */
+            color: white;
+            padding: 15px 30px; /* Larger button */
+            text-decoration: none;
+            border-radius: 25px; /* Rounded edges */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+        }
+
+        .button:hover {
+            background-color: #0088cc; /* Darker cyan on hover */
+            transform: scale(1.05); /* Small hover effect */
+        }
+
+        /* About Our Organization Section */
+        .about-section {
+            display: flex;
+            justify-content: space-between; /* Spread elements evenly */
+            padding: 20px; /* Padding for spacing */
+            border-left: 4px solid #00aaff; /* Cyan accent line */
+            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
+            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        .about-item {
+            flex: 1; /* Equal distribution of space */
+            text-align: center; /* Centered text */
+            padding: 20px; /* Padding within each item */
+        }
+
+        .about-item h2 {
+            color: #00aaff; /* Cyan subheadings */
+            text-transform: uppercase; /* Uppercase for emphasis */
+            font-size: 24px; /* Medium-sized subheadings */
+        }
+
+        /* "Our Educational Mission" Section */
+        .mission-section {
+            display: flex; /* Horizontal alignment */
+            padding: 20px; /* Padding for spacing */
+            border-left: 4px solid #00aaff; /* Cyan accent line */
+            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
+            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        .mission-photo {
+            flex: 1; /* Equal space for the image */
+            text-align: center; /* Centered image */
+            padding: 10px; /* Padding for spacing */
+        }
+
+        .mission-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px; /* Rounded corners */
+            border: 2px solid #00aaff; /* Cyan border */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+
+        .mission-text {
+            flex: 2; /* More space for text */
+            padding: 20px; /* Padding for spacing */
+            line-height: 1.5; /* Line spacing for readability */
+        }
+
+        .mission-text h2 {
+            text-transform: uppercase; /* Uppercase for emphasis */
+            color: #00aaff; /* Cyan subheading */
+            font-size: 28px; /* Larger subheading */
+            margin-bottom: 20px; /* Space below subheading */
+        }
+
+        /* "Featured Blog" Section */
+        .featured-blog {
+            padding: 20px; /* Padding for spacing */
+            border-left: 4px solid #00aaff; /* Cyan accent line */
+            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            border-radius: 15px; /* Rounded corners */
+            margin-top: 40px; /* Space above the section */
+        }
+
+        .featured-blog h2 {
+            text-transform: uppercase; /* Uppercase for emphasis */
+            color: #00aaff; /* Cyan subheading */
+            font-size: 28px; /* Larger subheading */
+            margin-bottom: 20px; /* Space below subheading */
+        }
+
+        .featured-blog p {
+            font-size: 20px; /* Readable font size */
+            line-height: 1.5; /* Line spacing */
+            color: #ffffff; /* White text for contrast */
+            margin-bottom: 30px; /* Space between text elements */
+        }
+
+        /* New footer section with contact details */
+        :root {
+    --main-color: #00ffee;
+    --second-bg-color: #131313;
+    --text-color: white;
+}
+
+.timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--main-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    text-align: left;
+    padding-right: calc(50% + 30px);
+}
+
+.timeline-item:nth-child(odd) {
+    text-align: right;
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--main-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 20px;
+    
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 25px var(--main-color);
+    font-size: large;
+}
+
+.timeline-data {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--main-color);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: larger;
+}
+footer {
+      box-shadow: 0 0 25px var(--main-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    :root {
+            --main-color: #00ffee;
+            --second-bg-color: #131313;
+            --text-color: white;
+        }
+
+        /* ... (existing styles) ... */
+
+        /* Add this media query to target smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-section, .photo-section {
+                flex: 1;
+                text-align: center;
+            }
+
+            .text-section {
+                border-left: none;
+            }
+
+            .photo-section img {
+                max-width: 100%;
+            }
+
+            .about-section, .mission-section, .featured-blog {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-item, .mission-text, .featured-blog p {
+                text-align: center;
+            }
+
+            .mission-photo {
+                text-align: center;
+            }
+
+            .mission-photo img {
+                max-width: 100%;
+            }
+
+            .timeline-items {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                text-align: center;
+            }
+
+            .timeline-dot {
+                left: 0;
+                transform: translateX(0);
+            }
+
+            .timeline-data {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-content {
+                margin-top: 20px;
+            }
+
+            /* Timeline adjustments for mobile screens */
+            .timeline-items {
+                margin: 0 -20px;
+            }
+
+            .timeline-item {
+                padding: 20px;
+            }
+
+            .timeline-dot {
+                position: static;
+                margin: 0 auto 10px auto;
+            }
+
+            .timeline-data {
+                position: static;
+                margin-bottom: 10px;
+            }
+
+            /* Additional adjustments for the timeline */
+            .timeline-items::before {
+                display: none;
+            }
+
+            .timeline-item:nth-child(even) {
+                text-align: left;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) {
+                text-align: left;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="text-section">
+                <h1>Welcome to Our Educational Blog</h1>
+                <p>Discover the latest in educational trends, insights, and resources. Join us on our journey to make education accessible to everyone.</p>
+                <div class="buttons">
+                    <a href="#" class="button">Read More</a>
+                    <a href="#" class="button">Contact Us</a>
+                </div>
+            </div>
+            <div class="photo-section">
+                <img src="https://via.placeholder.com/400" alt="Educational Blog Image">
+            </div>
+        </div>
+
+        <!-- About Our Organization Section -->
+        <h1>About Our Organization</h1>
+        <div class="about-section">
+            <div class="about-item">
+                <h2>Our Roots</h2>
+                <p>Established over a decade ago, our organization has a proud history of empowering educators and transforming lives through innovative educational initiatives.</p>
+            </div>
+            <div class ="about-item">
+                <h2>Our Values</h2>
+                <p>Collaboration, inclusivity, and a passion for lifelong learning guide our mission to create positive change in the classroom and beyond.</p>
+            </div>
+            <div class ="about-item">
+                <h2>Our Team</h2>
+                <p>Our dedicated staff of educators, administrators, and subject matter experts work tirelessly to support teachers and students alike.</p>
+            </div>
+        </div>
+
+        <!-- "Our Educational Mission" Section -->
+        <h1>Our Educational Mission</h1>
+        <div class="mission-section">
+            <div class ="mission-photo">
+                <img src="https://via.placeholder.com/400" alt="Educational Mission Image">
+            </div>
+            <div class ="mission-text">
+                <h2>Innovative Curricula</h2>
+                <p>We develop cutting-edge educational programs that inspire critical thinking and problem-solving skills.</p>
+                
+                <h2>Empowering Educators</h2>
+                <p>Through extensive professional development, we equip teachers with the tools and strategies to create transformative learning experiences.</p>
+                
+                <h2>Student-Centered Approach</h2>
+                <p>Our focus is on nurturing the unique strengths and interests of each student, fostering their personal growth and academic success.</p>
+            </div>
+        </div>
+
+        <!-- "Featured Blog" Section -->
+        <h1>Featured Blog</h1>
+        <div class="timeline-items">
+            <!-- Timeline item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-data">1</div>
+              <div class="timeline-content">
+                <h3>subject</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur harum alias distinctio at quia impedit, facilis est quis, omnis dignissimos fugiat saepe illo? Odio accusamus nemo nobis ex! Blanditiis, aliquam. Ea inventore dolores, quo libero illo nesciunt laudantium molestias quidem omnis assumenda, quasi modi soluta doloremque. Perspiciatis officiis est nam?</p>
+              </div>
+            </div>
+      
+            <!-- Timeline item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-data">2</div>
+              <div class="timeline-content">
+                <h3>subject</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ex, necessitatibus corporis, veritatis suscipit architecto veniam minus quisquam officiis debitis aliquid totam laudantium dolorem officia ipsa ad ratione sit voluptatem culpa facere id in deleniti. Quod quia laboriosam, optio veritatis sunt facilis voluptatibus, possimus ipsum odio dolor in quo quam.</p>
+              </div>
+            </div>
+      
+            <!-- Timeline item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-data">3</div>
+              <div class="timeline-content">
+                <h3>subject</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero delectus dolores velit modi alias, sint fuga quia deleniti optio, nostrum provident natus minus corporis assumenda exercitationem expedita ut esse? Amet, a ab! Ducimus quod consectetur magnam voluptatum, doloribus expedita quam fuga incidunt voluptates perferendis quibusdam voluptas pariatur ad, molestiae quis.</p>
+              </div>
+            </div>
+      
+          </div>
+
+        
+    </div>
+
+    <footer>
+        <p>
+          &copy; 2023 Your Company Name. All rights reserved.
+          <br>
+          Designed by <a href="https://yourwebsite.com" target="_blank">http://127.0.0.1:5501/index.html#</a>
+        </p>
+      </footer>
+    
+</body>
+</html>
