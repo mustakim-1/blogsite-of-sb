@@ -2,458 +2,986 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Educational Blog</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulphiric Bench - চট্টগ্রাম - এর আঞ্চলিক ভাষা</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #001f3f; /* Deep navy blue background */
-            color: #ffffff; /* White text for contrast */
-            font-family: 'Arial', sans-serif; /* Modern, clean font */
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column; /* Vertical stacking */
-            padding: 40px; /* Spacious padding */
-        }
-
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between; /* Evenly spaced elements */
-            align-items: center; /* Align items vertically */
-            padding-bottom: 40px; /* Padding at the bottom for separation */
-            border-bottom: 2px solid #00aaff; /* Cyan border for separation */
-        }
-
-        .text-section {
-            flex: 1; /* Equal distribution of space */
-            padding: 20px;
-            border-left: 4px solid #00aaff; /* Cyan accent line */
-        }
-
-        .photo-section {
-            flex: 1; /* Equal distribution of space */
-            text-align: center; /* Centered image */
-        }
-
-        .photo-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px; /* Rounded corners */
-            border: 2px solid #00aaff; /* Cyan border */
-            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
-        }
-
-        h1 {
-            text-transform: uppercase;
-            font-size: 32px; /* Larger heading */
-            font-weight: bold;
-            color: #00aaff; /* Cyan accent */
-            text-align: center; /* Centered heading */
-            margin-bottom: 20px; /* Space below heading */
-        }
-
-        p {
-            font-size: 20px; /* Readable font size */
-            margin-bottom: 30px; /* Space between text elements */
-        }
-
-        .buttons {
-            display: flex;
-            gap: 20px; /* Space between buttons */
-        }
-
-        .button {
-            background-color: #00aaff; /* Cyan button */
-            color: white;
-            padding: 15px 30px; /* Larger button */
-            text-decoration: none;
-            border-radius: 25px; /* Rounded edges */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-        }
-
-        .button:hover {
-            background-color: #0088cc; /* Darker cyan on hover */
-            transform: scale(1.05); /* Small hover effect */
-        }
-
-        /* About Our Organization Section */
-        .about-section {
-            display: flex;
-            justify-content: space-between; /* Spread elements evenly */
-            padding: 20px; /* Padding for spacing */
-            border-left: 4px solid #00aaff; /* Cyan accent line */
-            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
-            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
-            border-radius: 15px; /* Rounded corners */
-        }
-
-        .about-item {
-            flex: 1; /* Equal distribution of space */
-            text-align: center; /* Centered text */
-            padding: 20px; /* Padding within each item */
-        }
-
-        .about-item h2 {
-            color: #00aaff; /* Cyan subheadings */
-            text-transform: uppercase; /* Uppercase for emphasis */
-            font-size: 24px; /* Medium-sized subheadings */
-        }
-
-        /* "Our Educational Mission" Section */
-        .mission-section {
-            display: flex; /* Horizontal alignment */
-            padding: 20px; /* Padding for spacing */
-            border-left: 4px solid #00aaff; /* Cyan accent line */
-            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
-            box-shadow: 0 0 25px var(--main-color); /* Subtle shadow */
-            border-radius: 15px; /* Rounded corners */
-        }
-
-        .mission-photo {
-            flex: 1; /* Equal space for the image */
-            text-align: center; /* Centered image */
-            padding: 10px; /* Padding for spacing */
-        }
-
-        .mission-photo img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px; /* Rounded corners */
-            border: 2px solid #00aaff; /* Cyan border */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-        }
-
-        .mission-text {
-            flex: 2; /* More space for text */
-            padding: 20px; /* Padding for spacing */
-            line-height: 1.5; /* Line spacing for readability */
-        }
-
-        .mission-text h2 {
-            text-transform: uppercase; /* Uppercase for emphasis */
-            color: #00aaff; /* Cyan subheading */
-            font-size: 28px; /* Larger subheading */
-            margin-bottom: 20px; /* Space below subheading */
-        }
-
-        /* "Featured Blog" Section */
-        .featured-blog {
-            padding: 20px; /* Padding for spacing */
-            border-left: 4px solid #00aaff; /* Cyan accent line */
-            background-color: rgba(0, 31, 63, 0.7); /* Semi-transparent navy blue */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-            border-radius: 15px; /* Rounded corners */
-            margin-top: 40px; /* Space above the section */
-        }
-
-        .featured-blog h2 {
-            text-transform: uppercase; /* Uppercase for emphasis */
-            color: #00aaff; /* Cyan subheading */
-            font-size: 28px; /* Larger subheading */
-            margin-bottom: 20px; /* Space below subheading */
-        }
-
-        .featured-blog p {
-            font-size: 20px; /* Readable font size */
-            line-height: 1.5; /* Line spacing */
-            color: #ffffff; /* White text for contrast */
-            margin-bottom: 30px; /* Space between text elements */
-        }
-
-        /* New footer section with contact details */
-        :root {
-    --main-color: #00ffee;
-    --second-bg-color: #131313;
-    --text-color: white;
+       
+       body {
+    font-family: 'Anek Bangla', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.image{
+    background-image: url(/images/maxresdefault.jpg);
+    
 }
 
-.timeline-items {
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+    position: relative;
+    
+    z-index: 3;
+}
+
+.container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    
+    color: rgb(11, 227, 251);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.hero {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-}
-
-.timeline-items::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background: var(--main-color);
-}
-
-.timeline-item {
-    position: relative;
-    padding: 20px;
-    margin-bottom: 40px;
-}
-
-.timeline-item:nth-child(even) {
-    text-align: left;
-    padding-right: calc(50% + 30px);
-}
-
-.timeline-item:nth-child(odd) {
-    text-align: right;
-    padding-left: calc(50% + 30px);
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--main-color);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-
-.timeline-content {
-    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 80px);
+    box-sizing: border-box;
     padding: 20px;
     
-    color: var(--text-color);
-    border-radius: 10px;
-    box-shadow: 0 0 25px var(--main-color);
-    font-size: large;
 }
 
-.timeline-data {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--main-color);
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.title {
+    font-size: 3.5em;
+    margin-bottom: -60px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.author {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: right;
+    margin-top: 90px;
+}
+
+.text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.read-more-btn {
+    background-color: white;
     color: black;
-    padding: 5px 10px;
+    padding: 15px 30px;
+    text-decoration: none;
     border-radius: 5px;
-    font-size: larger;
+    font-weight: bold;
+    align-self: center;
+    font-family: sans-serif;
 }
-footer {
-      box-shadow: 0 0 25px var(--main-color);
-      color: white;
-      padding: 20px;
+
+.nav-links-container li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 12px;
+    font-size: large;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links-container li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff5722;
+    transition: width 0.3s ease;
+}
+
+.nav-links-container li a:hover::after {
+    width: 100%;
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+
+
+
+    /* Flip Card Styles */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      padding: 60px 20px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 250px;
+      height: 320px;
+      perspective: 1000px;
+      font-size: 18px;
+      
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
       text-align: center;
+      transition: transform 0.6s;
+      transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
+      transform-style: preserve-3d;
     }
 
-    footer p {
-      margin: 0;
+    .flip-card:hover .flip-card-inner {
+      transform: rotate(180deg) rotateX(180deg);
     }
 
-    footer a {
+    .flip-card-front,
+    .flip-card-back {
+      box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      padding: 20px;
+    }
+
+    .flip-card-front {
+      background: #ffffff;
+      color: #000;
+    }
+
+    .flip-card-back {
+      background: #ffffff;
+      color: #000000;
+      transform: rotateY(180deg);
+    }
+
+    .title {
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .flip-card-back button {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .flip-card:hover .flip-card-back button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff5722;
       color: white;
-      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    button:hover {
+      background-color: #e64a19;
     }
 
-    :root {
-            --main-color: #00ffee;
-            --second-bg-color: #131313;
-            --text-color: white;
+    /* Optional: Section heading */
+    #flip-cards-section {
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    #flip-cards-section h2 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    #flip-cards-section p {
+      font-size: 1em;
+      
+      margin-bottom: 30px;
+    }
+
+
+.latest-articles {
+            width: 90%;
+            margin: 40px auto;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #00bcd4; /* Cyan color */
+            border-bottom: 2px solid #00bcd4; /* Cyan line below header */
+            padding-bottom: 10px;
+        }
+        .section-header::before {
+            content: '\2022';
+            font-size: 4rem; /* Increased bullet point size */
+            color: #00bcd4; /* Cyan color */
+            margin-right: 10px;
+        }
+        .articles-container {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow the boxes to wrap */
+            padding-bottom: 10px;
+        }
+        .article-card {
+            width: 250px; /* Fixed width of the boxes */
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .article-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+        }
+        .article-card * {
+            position: relative;
+            z-index: 2;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .writer {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: auto;
+        }
+        .rating {
+            font-size: 1rem;
+            color: #ff5722; /* Orange color for rating */
+            margin-bottom: 5px;
+        }
+        .article-title {
+            font-size: 1.3rem;
+            margin: 5px 0;
+            font-weight: bold;
+            color: #00bcd4; /* Cyan color for title */
+        }
+        .article-description {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #f4f4f4;
         }
 
-        /* ... (existing styles) ... */
+        .banner {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        
+      }
 
-        /* Add this media query to target smaller screens */
-        @media screen and (max-width: 600px) {
-            .container {
-                padding: 20px;
+      .banner .slider {
+        position: absolute;
+        width: 200px; /* Default width */
+        height: 250px; /* Default height */
+        top: 10%;
+        left: calc(50% - 100px);
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        animation: autoRun 20s linear infinite;
+      }
+
+      @keyframes autoRun {
+        from {
+          transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+        }
+        to {
+          transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+        }
+      }
+
+      .banner .slider .item {
+        position: absolute;
+        inset: 0 0 0 0;
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+        overflow: hidden;
+      }
+
+      .banner .slider .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .banner .slider .item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+        z-index: 1;
+      }
+
+      .banner .slider .item .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        z-index: 2;
+      }
+
+      /* Media query for responsive design */
+      @media (max-width: 768px) {
+        .banner .slider {
+          width: 160px; /* Smaller width for mobile */
+          height: 210px; /* Smaller height for mobile */
+          top: 20%;
+          left: calc(50% - 60px); /* Adjusted for mobile */
+        }
+
+        .banner .slider .item {
+          transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px);
+        }
+      }
+
+      /* Media query for extra small mobile screens */
+      @media (max-width: 480px) {
+        .banner .slider {
+          width: 100px; /* Even smaller width for very small screens */
+          height: 120px; /* Even smaller height */
+          top: 20%;
+          left: calc(50% - 50px); /* Adjusted for very small screens */
+        }
+
+        .banner .slider .item {
+          transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(350px);
+        }
+      }
+
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .section-header {
+                font-size: 2.5rem;
             }
-
-            .content-wrapper {
-                flex-direction: column;
-                align-items: center;
+            .section-header::before {
+                font-size: 2.5rem;
             }
-
-            .text-section, .photo-section {
-                flex: 1;
-                text-align: center;
+            .articles-container {
+                gap: 20px;
+                justify-content: center;
             }
-
-            .text-section {
-                border-left: none;
-            }
-
-            .photo-section img {
-                max-width: 100%;
-            }
-
-            .about-section, .mission-section, .featured-blog {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-item, .mission-text, .featured-blog p {
-                text-align: center;
-            }
-
-            .mission-photo {
-                text-align: center;
-            }
-
-            .mission-photo img {
-                max-width: 100%;
-            }
-
-            .timeline-items {
-                flex-direction: column;
-            }
-
-            .timeline-item {
-                text-align: center;
-            }
-
-            .timeline-dot {
-                left: 0;
-                transform: translateX(0);
-            }
-
-            .timeline-data {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .timeline-content {
-                margin-top: 20px;
-            }
-
-            /* Timeline adjustments for mobile screens */
-            .timeline-items {
-                margin: 0 -20px;
-            }
-
-            .timeline-item {
-                padding: 20px;
-            }
-
-            .timeline-dot {
-                position: static;
-                margin: 0 auto 10px auto;
-            }
-
-            .timeline-data {
-                position: static;
-                margin-bottom: 10px;
-            }
-
-            /* Additional adjustments for the timeline */
-            .timeline-items::before {
-                display: none;
-            }
-
-            .timeline-item:nth-child(even) {
-                text-align: left;
-                padding-right: 0;
-            }
-
-            .timeline-item:nth-child(odd) {
-                text-align: left;
-                padding-left: 0;
+            .article-card {
+                width: 250px; /* Keep the same size */
+                height: 350px;
+                margin: 10px; /* Ensure margin is added for spacing */
             }
         }
+
+        /* Tablet responsiveness */
+        @media (max-width: 1024px) {
+            .section-header {
+                font-size: 3rem;
+            }
+            .section-header::before {
+                font-size: 3rem;
+            }
+            .articles-container {
+                gap: 20px;
+                justify-content: center;
+            }
+            .article-card {
+                width: 250px; /* Keep the same size */
+                height: 350px;
+                margin: 10px; /* Ensure margin is added for spacing */
+            }
+        }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links-container {
+        display: none;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)); /* Gradient */
+        text-align: center;
+        border-radius: 5px;
+        transition: display 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px; /* Increase padding */
+    }
+
+    nav li {
+        padding: 20px 0; /* Increase padding */
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        font-size: 1.1em; /* increase font size */
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    nav a.active {
+        font-weight: 600;
+        color: #ddd; /* make the active link more visible */
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 2.5em; /* increase size */
+        color: #ddd;
+        background: none;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 15px; /* adjust top position */
+        right: 15px; /* adjust right position */
+    }
+
+    .menu-toggle.active::before {
+        content: '✕';
+    }
+}
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content-wrapper">
-            <div class="text-section">
-                <h1>Welcome to Our Educational Blog</h1>
-                <p>Discover the latest in educational trends, insights, and resources. Join us on our journey to make education accessible to everyone.</p>
-                <div class="buttons">
-                    <a href="#" class="button">Read More</a>
-                    <a href="#" class="button">Contact Us</a>
+    <div class="image">
+        <header>
+            <div class="container">
+                <div class="logo">SULPHIRIC BENCH</div>
+                <button class="menu-toggle">☰</button>
+                <div class="nav-links-container">
+                    <nav>
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">GENRES</a></li>
+                            <li><a href="#">WRITERS</a></li>
+                            <li><a href="#">JOIN US</a></li>
+                            <li><a href="#">LOG IN</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="photo-section">
-                <img src="https://via.placeholder.com/400" alt="Educational Blog Image">
+        </header>
+    
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="title">চট্টগ্রাম - এর<br>আঞ্চলিক ভাষা</h1>
+                <p class="author">-আবরার মাহমুদ</p>
+                <p class="text">অশুদ্ধ ভাষা বলবি না, এখন পড়ালেখা করিস, তাই শুদ্ধ ভাষায় কথা বলবি - আদরের সন্তানকে জগতের মিথ্যা, অনিষ্ট থেকে দূরে রাখতে রাক্ষস, ভূতেদের খলনায়ক বানান আমাদের গুরুজনেরা। খারাপ সঙ্গ থেকে দূরে রাখেন। কিন্তু এই ভালোর মাঝে অমূলক হীনমন্যতায় খলনায়ক হয়ে যায় চট্টগ্রামের ভাষা। তারা ভাবেন শিক্ষিত হওয়ার পথে বাঁধা চাঁটগার ভাষা।</p>
+                <a href="#" class="read-more-btn">READ FULL ARTICLE</a>
             </div>
-        </div>
-
-        <!-- About Our Organization Section -->
-        <h1>About Our Organization</h1>
-        <div class="about-section">
-            <div class="about-item">
-                <h2>Our Roots</h2>
-                <p>Established over a decade ago, our organization has a proud history of empowering educators and transforming lives through innovative educational initiatives.</p>
-            </div>
-            <div class ="about-item">
-                <h2>Our Values</h2>
-                <p>Collaboration, inclusivity, and a passion for lifelong learning guide our mission to create positive change in the classroom and beyond.</p>
-            </div>
-            <div class ="about-item">
-                <h2>Our Team</h2>
-                <p>Our dedicated staff of educators, administrators, and subject matter experts work tirelessly to support teachers and students alike.</p>
-            </div>
-        </div>
-
-        <!-- "Our Educational Mission" Section -->
-        <h1>Our Educational Mission</h1>
-        <div class="mission-section">
-            <div class ="mission-photo">
-                <img src="https://via.placeholder.com/400" alt="Educational Mission Image">
-            </div>
-            <div class ="mission-text">
-                <h2>Innovative Curricula</h2>
-                <p>We develop cutting-edge educational programs that inspire critical thinking and problem-solving skills.</p>
-                
-                <h2>Empowering Educators</h2>
-                <p>Through extensive professional development, we equip teachers with the tools and strategies to create transformative learning experiences.</p>
-                
-                <h2>Student-Centered Approach</h2>
-                <p>Our focus is on nurturing the unique strengths and interests of each student, fostering their personal growth and academic success.</p>
-            </div>
-        </div>
-
-        <!-- "Featured Blog" Section -->
-        <h1>Featured Blog</h1>
-        <div class="timeline-items">
-            <!-- Timeline item 1 -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-data">1</div>
-              <div class="timeline-content">
-                <h3>subject</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur harum alias distinctio at quia impedit, facilis est quis, omnis dignissimos fugiat saepe illo? Odio accusamus nemo nobis ex! Blanditiis, aliquam. Ea inventore dolores, quo libero illo nesciunt laudantium molestias quidem omnis assumenda, quasi modi soluta doloremque. Perspiciatis officiis est nam?</p>
-              </div>
-            </div>
-      
-            <!-- Timeline item 2 -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-data">2</div>
-              <div class="timeline-content">
-                <h3>subject</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ex, necessitatibus corporis, veritatis suscipit architecto veniam minus quisquam officiis debitis aliquid totam laudantium dolorem officia ipsa ad ratione sit voluptatem culpa facere id in deleniti. Quod quia laboriosam, optio veritatis sunt facilis voluptatibus, possimus ipsum odio dolor in quo quam.</p>
-              </div>
-            </div>
-      
-            <!-- Timeline item 3 -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-data">3</div>
-              <div class="timeline-content">
-                <h3>subject</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero delectus dolores velit modi alias, sint fuga quia deleniti optio, nostrum provident natus minus corporis assumenda exercitationem expedita ut esse? Amet, a ab! Ducimus quod consectetur magnam voluptatum, doloribus expedita quam fuga incidunt voluptates perferendis quibusdam voluptas pariatur ad, molestiae quis.</p>
-              </div>
-            </div>
-      
-          </div>
-
-        
+        </section>
     </div>
 
-    <footer>
-        <p>
-          &copy; 2023 Your Company Name. All rights reserved.
-          <br>
-          Designed by <a href="https://yourwebsite.com" target="_blank">http://127.0.0.1:5501/index.html#</a>
-        </p>
-      </footer>
+    <section id="flip-cards-section">
+        <h2>বই পরিচিতি</h2>
+        <p style="color:black;">আকর্ষণীয় বইগুলোর পেছনের দৃষ্টিভঙ্গি আবিষ্কার করুন</p>
+        <div class="card-container">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p>লেখক: রাফি রহমান</p>
+              </div>
+              <div class="flip-card-back">
+                <p>3.4 ★</p>
+                <p>একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+                <button>Back</button>
+              </div>
+            </div>
+          </div>
     
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p>লেখক: রাফি রহমান</p>
+              </div>
+              <div class="flip-card-back">
+                <p>3.4 ★</p>
+                <p>একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+                <button>Back</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p>লেখক: রাফি রহমান</p>
+              </div>
+              <div class="flip-card-back">
+                <p>3.4 ★</p>
+                <p>একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+                <button>Back</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p>লেখক: রাফি রহমান</p>
+              </div>
+              <div class="flip-card-back">
+                <p>3.4 ★</p>
+                <p>একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+                <button>Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <section class="latest-articles">
+        <div class="section-header">LATEST ARTICLE</div>
+        <!-- Flip Book Section -->
+
+        <!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+
+<!-- Flip Book Styles -->
+<style>
+  .flip-book-section {
+    background: #f0f4ff;
+    
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items */
+    gap: 30px;
+    max-width: 1200px; /* Max width for 4 items in one row */
+    width: 100%;
+  }
+
+  .book {
+    position: relative;
+    width: 23%; /* Four items per row */
+    height: 360px;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    margin-bottom: 30px;
+  }
+
+  .cover, .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: transform 0.5s ease;
+  }
+
+  .cover {
+    background: linear-gradient(135deg, #00838f, #00bcd4);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    transform-origin: left;
+    transform: rotateY(0deg);
+  }
+
+  .book:hover .cover {
+    transform: rotateY(-82deg);
+  }
+
+  .content {
+    background-color: white;
+    z-index: 1;
+    text-align: center;
+    color: #000;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .writer {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .read-btn {
+    padding: 10px 20px;
+    background: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .read-btn:hover {
+    background: #00838f;
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 1024px) {
+    .book {
+      width: 48%; /* 2 items per row for tablets */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .book {
+      width: 48%; /* 2 items per row */
+    }
+
+    .cover, .content {
+      padding: 25px;
+    }
+
+    .title {
+      font-size: 22px;
+    }
+
+    .writer {
+      font-size: 16px;
+    }
+
+    .description {
+      font-size: 17px;
+    }
+
+    .read-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .book {
+      width: 100%; /* 1 item per row */
+    }
+
+    .cover, .content {
+      padding: 22px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .writer {
+      font-size: 14px;
+    }
+
+    .description {
+      font-size: 15px;
+    }
+
+    .read-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+
+
+<section class="flip-book-section">
+  <div class="books-container">
+    <div class="book">
+      <div class="content">
+        <div class="title">Mystic Island</div>
+        <div class="writer">by Sarah Lune</div>
+        <div class="description">A magical island where secrets unfold with every tide.</div>
+        <button class="read-btn">Read More</button>
+      </div>
+      <div class="cover">Mystic Island</div>
+    </div>
+
+    <div class="book">
+      <div class="content">
+        <div class="title">Beyond the Horizon</div>
+        <div class="writer">by Liam Noor</div>
+        <div class="description">A heartwarming journey of dreams, courage, and discovery.</div>
+        <button class="read-btn">Read More</button>
+      </div>
+      <div class="cover">Beyond the Horizon</div>
+    </div>
+
+    <div class="book">
+      <div class="content">
+        <div class="title">The Crystal Code</div>
+        <div class="writer">by Ava Rami</div>
+        <div class="description">When AI takes over, only one can rewrite the code of fate.</div>
+        <button class="read-btn">Read More</button>
+      </div>
+      <div class="cover">The Crystal Code</div>
+    </div>
+
+    <div class="book">
+      <div class="content">
+        <div class="title">Shadow Whispers</div>
+        <div class="writer">by Ethan Roy</div>
+        <div class="description">Darkness has a voice. Will she dare to listen?</div>
+        <button class="read-btn">Read More</button>
+      </div>
+      <div class="cover">Shadow Whispers</div>
+    </div>
+  </div>
+</section>
+
+        
+    </section>
+    
+
+    <section>
+        <div class="genres">
+            <div class="bullet"></div>
+            <span style="color: #00bcd4; border-bottom: 2px solid #00bcd4; font-size: 89px; font-weight: 600; align-content: center; ">GENRES</span>
+        </div>
+        <div class="banner">
+            <div class="slider" style="--quantity: 10">
+              <div class="item" style="--position: 1">
+                <a href="page1.html">
+                  <img src="/images/BAL_45915.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 1</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 2">
+                <a href="page2.html">
+                  <img src="/images/1200px-MANNapoli_124545_plato's_academy_mosaic_enh_crop (1).jpg" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 2</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 3">
+                <a href="page3.html">
+                  <img src="/images/1bef3d3b4d1b407b93b78240b5a19873.webp" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 3</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 4">
+                <a href="page4.html">
+                  <img src="/images/how-modern-warfare-bears-a-striking-resemblance-to-ancient-warfare-1687413352-7704.jpg" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 4</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 5">
+                <a href="page5.html">
+                  <img src="/images/painting-by-raphael-vatican-museum-600nw-2222666693.webp" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 5</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 6">
+                <a href="page6.html">
+                  <img src="/images/photo-pressure-army-ancient-war-scenes_670382-131176.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 6</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 7">
+                <a href="page7.html">
+                  <img src="/images/photo-pressure-army-ancient-war-scenes_670382-131176.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 7</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 8">
+                <a href="page8.html">
+                  <img src="/images/photo-pressure-army-ancient-war-scenes_670382-131176.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 8</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 9">
+                <a href="page9.html">
+                  <img src="/images/photo-pressure-army-ancient-war-scenes_670382-131176.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 9</div>
+                </a>
+              </div>
+              <div class="item" style="--position: 10">
+                <a href="page10.html">
+                  <img src="/images/photo-pressure-army-ancient-war-scenes_670382-131176.avif" alt="" />
+                  <div class="overlay"></div>
+                  <div class="text">Text 10</div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+      
+
+    </section>
+
+    <section class="latest-articles">
+        <div class="section-header">LATEST ARTICLE</div>
+        <div class="articles-container">
+            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+1');">
+                <div class="writer">লেখক: রাফি রহমান</div>
+                <div class="rating">3.4 ★</div>
+                <h3 class="article-title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</h3>
+                <p class="article-description">একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+            </div>
+            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+2');">
+                <div class="writer">লেখক: সাদিয়া তাসনিম</div>
+                <div class="rating">3.9 ★</div>
+                <h3 class="article-title">উৎসব ও সমাজ: কার্নিভালিজমের প্রভাব</h3>
+                <p class="article-description">উৎসব ও হাস্যরসের মাধ্যমে সমাজ কীভাবে পরিবর্তিত হয় তার উপর একটি দৃষ্টিপাত।</p>
+            </div>
+            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+3');">
+                <div class="writer">লেখক: তামিম হাসান</div>
+                <div class="rating">4.1 ★</div>
+                <h3 class="article-title">কার্নিভালিজম ও জনপ্রিয় সাহিত্য</h3>
+                <p class="article-description">সাহিত্য কীভাবে কার্নিভালিজমকে ধারণ করে এবং এর প্রভাব কী হতে পারে।</p>
+            </div>
+            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+4');">
+                <div class="writer">লেখক: শারমিন সুলতানা</div>
+                <div class="rating">4.5 ★</div>
+                <h3 class="article-title">বাংলাদেশে কার্নিভালিজমের অগ্রগতি</h3>
+                <p class="article-description">বাংলাদেশে কার্নিভালিজমের প্রভাব এবং এর সমাজে প্রভাব ফেলানোর চেষ্টা।</p>
+            </div>
+        </div>
+    </section>
+  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinksContainer = document.querySelector('.nav-links-container');
+
+            menuToggle.addEventListener('click', function() {
+                if (navLinksContainer.style.display === 'block') {
+                    navLinksContainer.style.display = 'none';
+                } else {
+                    navLinksContainer.style.display = 'block';
+                }
+                this.classList.toggle('active');
+                console.log("Menu Toggle Clicked");
+                console.log("Nav Links Container Display:", navLinksContainer.style.display);
+                console.log("Menu Toggle ClassList:", this.classList);
+            });
+        });
+    </script>
 </body>
 </html>
