@@ -154,114 +154,94 @@ nav a {
 
 
     /* Flip Card Styles */
- /* Flip Card Styles */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 100px;
-  padding: 60px 20px;
-}
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      padding: 60px 20px;
+    }
 
-.flip-card {
-  background-color: transparent;
-  width: 250px;
-  height: 320px;
-  perspective: 1000px;
-  font-size: 18px;
+    .flip-card {
+      background-color: transparent;
+      width: 250px;
+      height: 320px;
+      perspective: 1000px;
+      font-size: 18px;
+      
+    }
 
-}
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
+      transform-style: preserve-3d;
+    }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
-  transform-style: preserve-3d;
-}
+    .flip-card:hover .flip-card-inner {
+      transform: rotate(180deg) rotateX(180deg);
+    }
 
-.flip-card.flipped .flip-card-inner {
-  transform: rotate(180deg) rotateX(180deg);
-}
+    .flip-card-front,
+    .flip-card-back {
+      box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      padding: 20px;
+    }
 
-.flip-card-front,
-.flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 1rem;
-  padding: 20px;
-}
+    .flip-card-front {
+      background: #ffffff;
+      color: #000;
+    }
 
-.flip-card-front {
-  background: #ffffff;
-  color: #000;
-}
+    .flip-card-back {
+      background: #ffffff;
+      color: #000000;
+      transform: rotateY(180deg);
+    }
 
-.flip-card-back {
-  background: #ffffff;
-  color: #000000;
-  transform: rotateY(180deg);
-}
+    .title {
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.title {
-  font-size: 1.7em;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+    .flip-card-back button {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-.flip-card-back button {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    .flip-card:hover .flip-card-back button {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.flip-card:hover .flip-card-back button {
-  opacity: 1;
-  transform: translateY(0);
-}
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff5722;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #ff5722;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #e64a19;
-}
-
-/* Mobile Responsiveness (Relevant Part) */
-@media (max-width: 768px) {
-  .card-container {
-    gap: 20px;
-    justify-content: center;
-  }
-  .flip-card {
-    width: 48%; /* Adjusted for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-    margin-bottom: 20px; /* Add some spacing between cards */
-  }
-}
-
-@media (max-width: 480px) {
-  .flip-card {
-    width: 100%; /* Take full width on very small screens */
-  }
-}
+    button:hover {
+      background-color: #e64a19;
+    }
 
     /* Optional: Section heading */
     #flip-cards-section {
@@ -1002,16 +982,6 @@ button:hover {
                 console.log("Menu Toggle ClassList:", this.classList);
             });
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-  const flipCards = document.querySelectorAll('.flip-card');
-
-  flipCards.forEach(card => {
-    card.addEventListener('click', function() {
-      this.classList.toggle('flipped');
-    });
-  });
-});
     </script>
 </body>
 </html>
