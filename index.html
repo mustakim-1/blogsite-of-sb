@@ -243,105 +243,108 @@ nav a {
       background-color: #e64a19;
     }
 
-    /* Optional: Section heading */
-    #flip-cards-section {
-      text-align: center;
-      padding-top: 40px;
-    }
+    
 
-    #flip-cards-section h2 {
-      font-size: 2.5em;
-      color: #333;
-      margin-bottom: 10px;
-    }
+   /* Flip Card Base Styles */
+.flip-cards-section .book {
+  width: 300px;
+  height: 450px;
+  perspective: 1000px;
+  position: relative;
+}
 
-    #flip-cards-section p {
-      font-size: 1em;
-      
-      margin-bottom: 30px;
-    }
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.book:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: #fff;
+  z-index: 2;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.flip-card-front .title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.flip-card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+/* 📱 Mobile View Adjustments */
+@media (max-width: 768px) {
+  .flip-cards-section .book {
+    height: auto;
+  }
+
+  .flip-card-inner {
+    transform: none !important;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: static;
+    transform: none;
+    backface-visibility: visible;
+  }
+
+  .flip-card-back {
+    display: none; /* Hide the back side completely */
+  }
+
+  .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .flip-card-front img {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .flip-card-front .extra-info {
+    display: block;  /* Ensure extra info is visible on mobile */
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
 
 
-.latest-articles {
-            width: 90%;
-            margin: 40px auto;
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #00bcd4; /* Cyan color */
-            border-bottom: 2px solid #00bcd4; /* Cyan line below header */
-            padding-bottom: 10px;
-        }
-        .section-header::before {
-            content: '\2022';
-            font-size: 4rem; /* Increased bullet point size */
-            color: #00bcd4; /* Cyan color */
-            margin-right: 10px;
-        }
-        .articles-container {
-            display: flex;
-            gap: 40px;
-            justify-content: space-between;
-            flex-wrap: wrap; /* Allow the boxes to wrap */
-            padding-bottom: 10px;
-        }
-        .article-card {
-            width: 250px; /* Fixed width of the boxes */
-            height: 350px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: white;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        .article-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
-        }
-        .article-card * {
-            position: relative;
-            z-index: 2;
-        }
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        .writer {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: auto;
-        }
-        .rating {
-            font-size: 1rem;
-            color: #ff5722; /* Orange color for rating */
-            margin-bottom: 5px;
-        }
-        .article-title {
-            font-size: 1.3rem;
-            margin: 5px 0;
-            font-weight: bold;
-            color: #00bcd4; /* Cyan color for title */
-        }
-        .article-description {
-            font-size: 0.9rem;
-            margin-top: 10px;
-            color: #f4f4f4;
-        }
+
 
         .banner {
         width: 100%;
@@ -546,9 +549,9 @@ nav a {
                     <nav>
                         <ul>
                             <li><a href="#">HOME</a></li>
-                            <li><a href="#">GENRES</a></li>
-                            <li><a href="#">WRITERS</a></li>
-                            <li><a href="#">JOIN US</a></li>
+                            <li><a href="/genres.html">GENRES</a></li>
+                            <li><a href="/writers.html">WRITERS</a></li>
+                            <li><a href="/log-in.html">JOIN US</a></li>
                             <li><a href="#">LOG IN</a></li>
                         </ul>
                     </nav>
@@ -567,8 +570,9 @@ nav a {
     </div>
 
     <section id="flip-cards-section">
-        <h2>বই পরিচিতি</h2>
-        <p style="color:black;">আকর্ষণীয় বইগুলোর পেছনের দৃষ্টিভঙ্গি আবিষ্কার করুন</p>
+       <h2 style="text-align: center; color: #000000;">latest-articles</h2>
+<p style="color: black; text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque obcaecati voluptate ab aliquam consectetur veniam culpa quod voluptates illo, quaerat laudantium est a commodi aperiam id deleniti animi natus? Ad!</p>
+
         <div class="card-container">
           <div class="flip-card">
             <div class="flip-card-inner">
@@ -629,225 +633,221 @@ nav a {
       </section>
 
 
-    <section class="latest-articles">
-        <div class="section-header">LATEST ARTICLE</div>
-        <!-- Flip Book Section -->
-
+      <section class="latest-articles">
+        <div class="section-header" style="color: #000; font-size: 40px">LATEST ARTICLE</div>
+      
         <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-
-<!-- Flip Book Styles -->
-<style>
-  .flip-book-section {
-    background: #f0f4ff;
-    
-    font-family: 'Josefin Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .books-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the items */
-    gap: 30px;
-    max-width: 1200px; /* Max width for 4 items in one row */
-    width: 100%;
-  }
-
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+      
+        <style>
+          .flip-book-section {
+            background: #f0f4ff;
+            font-family: 'Josefin Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+      
+          .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+          }
+      
+          .book {
+            position: relative;
+            width: 23%;
+            height: 360px;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            margin-bottom: 30px;
+          }
+      
+          .cover, .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            transition: transform 0.5s ease;
+          }
+      
+          .cover {
+            background: linear-gradient(135deg, #00838f, #00bcd4);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 2;
+            transform-origin: left;
+            transform: rotateY(0deg);
+          }
+      
+          .book:hover .cover {
+            transform: rotateY(-82deg);
+          }
+      
+          .content {
+            background-color: white;
+            z-index: 1;
+            text-align: center;
+            color: #000;
+          }
+      
+          .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+          }
+      
+          .writer {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+          }
+      
+          .description {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+          }
+      
+          .read-btn {
+            padding: 10px 20px;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+          }
+      
+          .read-btn:hover {
+            background: #00838f;
+          }
+          @media (max-width: 768px) {
   .book {
-    position: relative;
-    width: 23%; /* Four items per row */
-    height: 360px;
-    perspective: 1200px;
-    transform-style: preserve-3d;
-    margin-bottom: 30px;
-  }
-
-  .cover, .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    transition: transform 0.5s ease;
+    width: 90%;
+    height: auto;
+    perspective: none;
+    margin-bottom: 20px;
   }
 
   .cover {
-    background: linear-gradient(135deg, #00838f, #00bcd4);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 2;
-    transform-origin: left;
-    transform: rotateY(0deg);
-  }
-
-  .book:hover .cover {
-    transform: rotateY(-82deg);
+    display: none; /* Hide the flip cover */
   }
 
   .content {
-    background-color: white;
-    z-index: 1;
-    text-align: center;
-    color: #000;
+    position: relative;
+    transform: none !important;
+    backface-visibility: visible;
+    z-index: auto;
+    padding: 25px 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2);
+    border: 1px solid #e0e0e0;
   }
 
   .title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 8px;
-    color: #333;
+    color: #007c91;
   }
 
   .writer {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 15px;
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 12px;
   }
 
   .description {
     font-size: 15px;
     color: #555;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 18px;
   }
 
   .read-btn {
-    padding: 10px 20px;
+    padding: 10px 24px;
+    font-size: 14px;
     background: #00bcd4;
     color: white;
     border: none;
-    border-radius: 30px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
   }
 
   .read-btn:hover {
-    background: #00838f;
+    background: #007c91;
+    transform: scale(1.05);
   }
-
-  /* Responsive Layout */
-  @media (max-width: 1024px) {
-    .book {
-      width: 48%; /* 2 items per row for tablets */
-    }
-  }
-
-  @media (max-width: 768px) {
-    .book {
-      width: 48%; /* 2 items per row */
-    }
-
-    .cover, .content {
-      padding: 25px;
-    }
-
-    .title {
-      font-size: 22px;
-    }
-
-    .writer {
-      font-size: 16px;
-    }
-
-    .description {
-      font-size: 17px;
-    }
-
-    .read-btn {
-      padding: 12px 24px;
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .book {
-      width: 100%; /* 1 item per row */
-    }
-
-    .cover, .content {
-      padding: 22px;
-    }
-
-    .title {
-      font-size: 20px;
-    }
-
-    .writer {
-      font-size: 14px;
-    }
-
-    .description {
-      font-size: 15px;
-    }
-
-    .read-btn {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-  }
-</style>
+}
 
 
 
-<section class="flip-book-section">
-  <div class="books-container">
-    <div class="book">
-      <div class="content">
-        <div class="title">Mystic Island</div>
-        <div class="writer">by Sarah Lune</div>
-        <div class="description">A magical island where secrets unfold with every tide.</div>
-        <button class="read-btn">Read More</button>
-      </div>
-      <div class="cover">Mystic Island</div>
-    </div>
-
-    <div class="book">
-      <div class="content">
-        <div class="title">Beyond the Horizon</div>
-        <div class="writer">by Liam Noor</div>
-        <div class="description">A heartwarming journey of dreams, courage, and discovery.</div>
-        <button class="read-btn">Read More</button>
-      </div>
-      <div class="cover">Beyond the Horizon</div>
-    </div>
-
-    <div class="book">
-      <div class="content">
-        <div class="title">The Crystal Code</div>
-        <div class="writer">by Ava Rami</div>
-        <div class="description">When AI takes over, only one can rewrite the code of fate.</div>
-        <button class="read-btn">Read More</button>
-      </div>
-      <div class="cover">The Crystal Code</div>
-    </div>
-
-    <div class="book">
-      <div class="content">
-        <div class="title">Shadow Whispers</div>
-        <div class="writer">by Ethan Roy</div>
-        <div class="description">Darkness has a voice. Will she dare to listen?</div>
-        <button class="read-btn">Read More</button>
-      </div>
-      <div class="cover">Shadow Whispers</div>
-    </div>
-  </div>
-</section>
-
-        
-    </section>
+        </style>
+      
+        <section class="flip-book-section">
+          <div class="books-container">
+            <div class="book">
+              <div class="content">
+                <div class="title">Mystic Island</div>
+                <div class="writer">by Sarah Lune</div>
+                <div class="description">A magical island where secrets unfold with every tide.</div>
+                <button class="read-btn">Read More</button>
+              </div>
+              <div class="cover">Mystic Island</div>
+            </div>
+      
+            <div class="book">
+              <div class="content">
+                <div class="title">Beyond the Horizon</div>
+                <div class="writer">by Liam Noor</div>
+                <div class="description">A heartwarming journey of dreams, courage, and discovery.</div>
+                <button class="read-btn">Read More</button>
+              </div>
+              <div class="cover">Beyond the Horizon</div>
+            </div>
+      
+            <div class="book">
+              <div class="content">
+                <div class="title">The Crystal Code</div>
+                <div class="writer">by Ava Rami</div>
+                <div class="description">When AI takes over, only one can rewrite the code of fate.</div>
+                <button class="read-btn">Read More</button>
+              </div>
+              <div class="cover">The Crystal Code</div>
+            </div>
+      
+            <div class="book">
+              <div class="content">
+                <div class="title">Shadow Whispers</div>
+                <div class="writer">by Ethan Roy</div>
+                <div class="description">Darkness has a voice. Will she dare to listen?</div>
+                <button class="read-btn">Read More</button>
+              </div>
+              <div class="cover">Shadow Whispers</div>
+            </div>
+          </div>
+        </section>
+      </section>
+      
     
 
     <section>
@@ -933,38 +933,179 @@ nav a {
       
 
     </section>
-
-    <section class="latest-articles">
-        <div class="section-header">LATEST ARTICLE</div>
-        <div class="articles-container">
-            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+1');">
-                <div class="writer">লেখক: রাফি রহমান</div>
-                <div class="rating">3.4 ★</div>
-                <h3 class="article-title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</h3>
-                <p class="article-description">একটি আকর্ষণীয় সাহিত্য আন্দোলন যা সমাজের গভীর স্তরে পৌঁছানোর চেষ্টা করে।</p>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@500&display=swap');
+      
+      body {
+        margin: 0;
+        padding: 0;
+        background: #eafcff;
+        font-family: 'Merriweather', serif;
+      }
+      
+      .latest-articles {
+        padding: 70px 30px;
+        text-align: center;
+      }
+      
+      .section-title {
+        font-size: 38px;
+        color: #003f4f;
+        margin-bottom: 50px;
+        position: relative;
+        letter-spacing: 1px;
+      }
+      
+      .section-title::after {
+        content: '';
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #00d4ff, #d0faff);
+        display: block;
+        margin: 14px auto 0;
+        border-radius: 5px;
+      }
+      
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1500px;
+        margin: auto;
+      }
+      
+      .card {
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0, 105, 130, 0.12);
+        display: flex;
+        flex-direction: column;
+        animation: fadeUp 1s ease forwards;
+        opacity: 0;
+        transform: translateY(40px);
+        animation-delay: var(--delay);
+      }
+      
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .card-image {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .card-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.05));
+      }
+      
+      .card-body {
+        padding: 22px 20px;
+        text-align: left;
+        background: #fefefe;
+      }
+      
+      .card .writer,
+      .card .rating {
+        font-size: 14px;
+        color: #007a8c;
+        margin-bottom: 6px;
+      }
+      
+      .card hr {
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(to right, #00d4ff, #ffffff);
+        border: none;
+        margin: 8px 0 12px;
+        border-radius: 2px;
+      }
+      
+      .card .title {
+        font-size: 19px;
+        font-weight: bold;
+        color: #002830;
+        margin: 8px 0 12px;
+      }
+      
+      .card .description {
+        font-size: 15px;
+        color: #2e2e2e;
+        line-height: 1.5;
+      }
+      </style>
+      
+      <section class="latest-articles">
+        <div class="section-title">LATEST ARTICLES</div>
+        <div class="articles-grid">
+          <div class="card" style="--delay: 0s">
+            <div class="card-image" style="background-image: url('your-image1.jpg');"></div>
+            <div class="card-body">
+              <div class="writer">লেখক: রাফি রহমান</div>
+              <hr>
+              <div class="rating">রেটিং: 3.4 ★</div>
+              <hr>
+              <div class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</div>
+              <hr>
+              <div class="description">সাহিত্যিক কার্নিভালিজম সমাজে কীভাবে হাস্যরস ও সমালোচনার সমন্বয় ঘটায় তা ব্যাখ্যা করা হয়েছে।</div>
             </div>
-            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+2');">
-                <div class="writer">লেখক: সাদিয়া তাসনিম</div>
-                <div class="rating">3.9 ★</div>
-                <h3 class="article-title">উৎসব ও সমাজ: কার্নিভালিজমের প্রভাব</h3>
-                <p class="article-description">উৎসব ও হাস্যরসের মাধ্যমে সমাজ কীভাবে পরিবর্তিত হয় তার উপর একটি দৃষ্টিপাত।</p>
+          </div>
+      
+          <div class="card" style="--delay: 0.15s">
+            <div class="card-image" style="background-image: url('your-image2.jpg');"></div>
+            <div class="card-body">
+              <div class="writer">লেখক: সাদিয়া তাসনিম</div>
+              <hr>
+              <div class="rating">রেটিং: 3.9 ★</div>
+              <hr>
+              <div class="title">উৎসব ও সমাজ: কার্নিভালিজমের প্রভাব</div>
+              <hr>
+              <div class="description">উৎসব কিভাবে সামাজিক নিয়ম ভাঙতে সাহায্য করে এবং সাংস্কৃতিক বৈচিত্র্য তৈরি করে তা বিশ্লেষণ।</div>
             </div>
-            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+3');">
-                <div class="writer">লেখক: তামিম হাসান</div>
-                <div class="rating">4.1 ★</div>
-                <h3 class="article-title">কার্নিভালিজম ও জনপ্রিয় সাহিত্য</h3>
-                <p class="article-description">সাহিত্য কীভাবে কার্নিভালিজমকে ধারণ করে এবং এর প্রভাব কী হতে পারে।</p>
+          </div>
+      
+          <div class="card" style="--delay: 0.3s">
+            <div class="card-image" style="background-image: url('your-image3.jpg');"></div>
+            <div class="card-body">
+              <div class="writer">লেখক: তামিম হাসান</div>
+              <hr>
+              <div class="rating">রেটিং: 4.1 ★</div>
+              <hr>
+              <div class="title">কার্নিভালিজম ও জনপ্রিয় সাহিত্য</div>
+              <hr>
+              <div class="description">জনপ্রিয় সাহিত্যে কার্নিভালিজমের উপস্থিতি এবং পাঠকের মনে এর সৃষ্ট প্রতিক্রিয়া আলোচনা।</div>
             </div>
-            <div class="article-card" style="background-image: url('https://via.placeholder.com/250x400/00bcd4/ffffff?text=Article+4');">
-                <div class="writer">লেখক: শারমিন সুলতানা</div>
-                <div class="rating">4.5 ★</div>
-                <h3 class="article-title">বাংলাদেশে কার্নিভালিজমের অগ্রগতি</h3>
-                <p class="article-description">বাংলাদেশে কার্নিভালিজমের প্রভাব এবং এর সমাজে প্রভাব ফেলানোর চেষ্টা।</p>
+          </div>
+      
+          <div class="card" style="--delay: 0.45s">
+            <div class="card-image" style="background-image: url('your-image4.jpg');"></div>
+            <div class="card-body">
+              <div class="writer">লেখক: জান্নাতুল নাইম</div>
+              <hr>
+              <div class="rating">রেটিং: 4.3 ★</div>
+              <hr>
+              <div class="title">কার্নিভালিজম: ইতিহাস ও আধুনিকতা</div>
+              <hr>
+              <div class="description">কার্নিভালিজমের ঐতিহাসিক উৎস এবং এটি আজকের সাহিত্যিক পরিবেশে কিভাবে টিকে আছে তা বিশ্লেষণ।</div>
             </div>
+          </div>
         </div>
-    </section>
-  
-
+      </section>
+      
+      </section>
+      
+      
+      
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
