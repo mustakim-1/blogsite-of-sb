@@ -6,9 +6,8 @@
   <title>Sulphiric Bench</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    * {
+* {
       box-sizing: border-box;
-      
       padding: 0;
     }
 
@@ -50,7 +49,7 @@
 
     .nav-links li a:hover {
       color: #ffffff;
-      font-size: x-large
+      font-size: x-large;
     }
 
     .contact-section {
@@ -62,20 +61,40 @@
       gap: 40px;
     }
 
-    .contact-left,
-    .contact-right {
-      flex: 1;
+    .contact-left {
+      flex: 2;
       min-width: 320px;
     }
 
-    .contact-left {
-      padding: 20px;
+    .contact-right {
+      flex: 1;
+      min-width: 320px;
+      padding: 30px;
     }
 
-    .contact-left h2 {
-      font-size: 2.2rem;
+    .contact-left h3 {
+      font-size: 1.4rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      color: #ffffff;
+      border-left: 4px solid #4ce3f7;
+      padding-left: 10px;
+    }
+
+    .contact-left .intro {
+      font-size: xx-large;
+      color: #d0f7ff;
+      line-height: 1.8;
+    }
+
+    .detail-box a {
+      text-decoration: none;
       color: #4ce3f7;
-      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .detail-box a:hover {
+      color: #ffffff;
     }
 
     .contact-left p {
@@ -88,7 +107,7 @@
     .contact-details {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 25px;
+      gap: 55px;
     }
 
     .detail-box {
@@ -155,89 +174,219 @@
       background-color: #023841;
     }
 
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
+   @media (max-width: 768px) {
+  /* Navbar adjustment */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 10px;
+  }
 
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-      }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: none; /* Initially hide the links */
+  }
 
-      .contact-section {
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 15px;
-      }
+  .navbar.active .nav-links {
+    display: flex; /* Show links when navbar is active */
+  }
 
-      .contact-left,
-      .contact-right {
-        width: 100%;
-        max-width: 100%;
-      }
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
 
-      .contact-details {
-        grid-template-columns: 1fr;
-      }
-    }
+  .navbar .logo {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  /* Toggle button for mobile */
+  .navbar .toggle-btn {
+    display: block;
+    background-color: #4ce3f7;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-details {
+    grid-template-columns: 1fr;
+  }
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #01252b;
+  color: white;
+}
+
+.navbar {
+  background-color: #01252b;
+  color: #4ce3f7;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #4ce3f733;
+  margin-bottom: 99px;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4ce3f7;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: x-large;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  font-size: x-large;
+}
+
+.navbar .toggle-btn {
+  display: none; /* Hide the toggle button by default */
+  background-color: #4ce3f7;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: none; /* Hide nav-links by default on mobile */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar.active .nav-links {
+    display: flex; /* Show nav-links when navbar has the 'active' class */
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .navbar .toggle-btn {
+    display: block; /* Show the toggle button on mobile */
+  }
+}
+
+
   </style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">SULPHIRIC BENCH</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/genres.html">Genres</a></li>
-        <li><a href="/writers.html">Writers</a></li>
-        <li><a href="#">Join Us</a></li>
-        <li><a href="#">Log In</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="logo">SULPHIRIC BENCH</div>
+  <button class="toggle-btn">☰</button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="genres.html">Genres</a></li>
+      <li><a href="writers.html">Writers</a></li>
+      <li><a href="#">Join Us</a></li>
+      <li><a href="#">Log In</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="contact-section">
-    <div class="contact-left">
-      <h2>Contact Us</h2>
-      <p>
-        Whether you have questions about our services, need support, or want to share your feedback,
-        our dedicated team is here to assist you every step of the way.
-      </p>
-      <div class="contact-details">
-        <div class="detail-box">
-          <span>📧</span>
-          <div><strong>Email</strong><br>hello@reallygreatsite.com</div>
-        </div>
-        <div class="detail-box">
-          <span>🌐</span>
-          <div><strong>Website</strong><br>reallygreatsite.com</div>
-        </div>
-        <div class="detail-box">
-          <span>📞</span>
-          <div><strong>Phone</strong><br>+123-456-7890</div>
-        </div>
-        <div class="detail-box">
-          <span>📍</span>
-          <div><strong>Location</strong><br>123 Anywhere St., Any City</div>
-        </div>
+<main class="contact-section">
+  <div class="contact-left">
+    <h2>Contact Us</h2>
+    <p class="intro">Have a question, suggestion, or just want to say hello? We'd love to hear from you. Connect with our team through any of the ways below.</p>
+    <h3>Reach Us At</h3>
+    <div class="contact-details">
+      <div class="detail-box">
+        <span>📧</span>
+        <div><strong>Email</strong><br><a href="mailto:hello@reallygreatsite.com">hello@reallygreatsite.com</a></div>
+      </div>
+      <div class="detail-box">
+        <span>🌐</span>
+        <div><strong>Website</strong><br><a href="#">reallygreatsite.com</a></div>
+      </div>
+      <div class="detail-box">
+        <span>📞</span>
+        <div><strong>Phone</strong><br><a href="tel:+1234567890">+123-456-7890</a></div>
+      </div>
+      <div class="detail-box">
+        <span>📍</span>
+        <div><strong>Location</strong><br>123 Anywhere St., Any City</div>
       </div>
     </div>
+  </div>
 
-    <div class="contact-right">
-      <h2>Join Writers’ Panel</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone Number" required />
-        <textarea placeholder="Message" rows="4" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </main>
+  <div class="contact-right">
+    <h2>Join Writers’ Panel</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <textarea placeholder="Message" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</main>
+
+<script>
+  const toggleBtn = document.querySelector('.toggle-btn');
+  const navbar = document.querySelector('.navbar'); // select the navbar
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active'); // toggle the active class on the navbar
+  });
+</script>
 
 </body>
 </html>

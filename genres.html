@@ -8,380 +8,436 @@
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
         
         /* Navbar Styles */
-.navbar {
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 105, 130, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 15px 30px;
-  font-family: 'Merriweather', serif;
-}
+        .navbar {
+            background-color: #034c71; /* Dark Cyan */
+            box-shadow: 0 4px 10px rgba(0, 105, 130, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 30px;
+            font-family: 'Merriweather', serif;
+        }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.logo {
-  font-size: 26px;
-  font-weight: 600;
-  color: #003f4f;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        .logo {
+            font-size: 26px;
+            font-weight: 600;
+            color: #ffffff; /* White text for contrast */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-.nav-links a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #005a6c;
-  font-size: 20px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #ffffff; /* White text for contrast */
+            font-size: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
 
-.nav-links a:hover {
-  color: #00b6d4;
-}
-/* Responsive Design Tweaks */
-@media (max-width: 1024px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+        .nav-links a:hover {
+            color: #00b6d4; /* Light Blue */
+        }
 
-  .nav-links {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-  }
+        /* Responsive Design Tweaks */
+        @media (max-width: 1024px) {
+            .navbar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-  .nav-links a {
-    margin-left: 0;
-    font-size: 18px;
-  }
-}
+            .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 35px;
+            }
 
-@media (max-width: 768px) {
-  .genre-section {
-    padding: 50px 20px;
-  }
+            .nav-links a {
+                margin-left: 0;
+                font-size: 18px;
+            }
+        }
 
-  .genre-section h2 {
-    font-size: 30px;
-  }
+        @media (max-width: 768px) {
+            .genre-section {
+                padding: 50px 20px;
+            }
 
-  .genre-section p {
-    font-size: 15px;
-    margin: 15px auto 40px;
-  }
+            .genre-section h2 {
+                font-size: 30px;
+            }
 
-  .genre-columns {
-    flex-direction: column;
-  }
+            .genre-section p {
+                font-size: 15px;
+                margin: 15px auto 40px;
+            }
 
-  .genre-column {
-    padding: 20px;
-  }
+            .genre-columns {
+                flex-direction: column;
+            }
 
-  .genre-column h3 {
-    font-size: 22px;
-  }
+            .genre-column {
+                padding: 20px;
+            }
 
-  .genre-box {
-    padding: 20px;
-  }
+            .genre-column h3 {
+                font-size: 22px;
+            }
 
-  .genre-title {
-    font-size: 20px;
-  }
+            .genre-box {
+                padding: 20px;
+            }
 
-  .genre-writer {
-    font-size: 14px;
-  }
+            .genre-title {
+                font-size: 20px;
+            }
 
-  .see-more-btn {
-    padding: 12px 25px;
-    font-size: 15px;
-    margin-top: 20px;
-  }
-}
+            .genre-writer {
+                font-size: 14px;
+            }
 
-@media (max-width: 480px) {
-  .logo {
-    font-size: 22px;
-  }
+            .see-more-btn {
+                padding: 12px 25px;
+                font-size: 15px;
+                margin-top: 20px;
+            }
+        }
 
-  .nav-links a {
-    font-size: 16px;
-  }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 22px;
+            }
 
-  .genre-boxes {
-    grid-template-columns: 1fr;
-  }
+            .nav-links a {
+                font-size: 16px;
+            }
 
-  .genre-box {
-    padding: 18px;
-  }
+            .genre-boxes {
+                grid-template-columns: 1fr;
+            }
 
-  .genre-title {
-    font-size: 18px;
-  }
+            .genre-box {
+                padding: 18px;
+            }
 
-  .genre-writer {
-    font-size: 13px;
-  }
+            .genre-title {
+                font-size: 18px;
+            }
 
-  .see-more-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
+            .genre-writer {
+                font-size: 13px;
+            }
 
+            .see-more-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
 
-        
+        /* Genre Section */
         .genre-section {
-          padding: 80px 30px;
-          background: #f0fcff;
-          font-family: 'Merriweather', serif;
-          color: #003f4f;
-          text-align: center;
+            padding: 80px 30px;
+            background: #01252b; /* Dark Cyan */
+            font-family: 'Merriweather', serif;
+            color: #ffffff; /* White text for contrast */
+            text-align: center;
         }
-        
+
         .genre-section h2 {
-          font-size: 38px;
-          margin-bottom: 10px;
-          position: relative;
+            font-size: 38px;
+            margin-bottom: 10px;
+            position: relative;
         }
-        
+
         .genre-section h2::after {
-          content: '';
-          width: 80px;
-          height: 3px;
-          background: linear-gradient(to right, #00c4cc, #b3f6ff);
-          display: block;
-          margin: 12px auto 0;
-          border-radius: 5px;
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #00c4cc, #b3f6ff);
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 5px;
         }
-        
+
         .genre-section p {
-          font-size: 16px;
-          max-width: 700px;
-          margin: 20px auto 50px;
-          color: #334f54;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 20px auto 50px;
+            color: #ffffff; /* White text */
         }
-        
+
         .genre-columns {
-          display: flex;
-          justify-content: space-between;
-          gap: 40px;
-          flex-wrap: wrap;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
         }
-        
+
         .genre-column {
-          flex: 1 1 600px;
-          background: #ffffff;
-          padding: 30px;
-          border-radius: 15px;
-          box-shadow: 0 10px 25px rgba(0, 105, 130, 0.08);
+            flex: 1 1 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 105, 130, 0.08);
         }
-        
+
         .genre-column h3 {
-          font-size: 24px;
-          margin-bottom: 25px;
-          color: #004c5c;
-          position: relative;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #003b4c;
+            position: relative;
         }
-        
+
         .genre-column h3::after {
-          content: '';
-          width: 50px;
-          height: 2.5px;
-          background: #00b6d4;
-          display: block;
-          margin-top: 10px;
-          border-radius: 3px;
+            content: '';
+            width: 50px;
+            height: 2.5px;
+            background: #00b6d4;
+            display: block;
+            margin-top: 10px;
+            border-radius: 3px;
         }
-        
+
         .genre-boxes {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-        
-        .genre-box {
-          background: #e2fbff;
-          border-radius: 12px;
-          padding: 25px;
-          text-align: left;
-          box-shadow: 0 6px 14px rgba(0, 150, 170, 0.1);
-          transition: 0.3s ease;
-          position: relative;
-          cursor: pointer;
-          text-decoration: none;
-        }
-        
-        .genre-box:hover {
-          background: #d1f7ff;
-        }
-        
-        .genre-title {
-          font-size: 22px;
-          font-weight: 600;
-          color: #003b4c;
-          margin-bottom: 8px;
-        }
-        
-        .genre-writer {
-          font-size: 16px;
-          color: #005a6c;
-          border-top: 1px solid #b8ecf4;
-          padding-top: 10px;
-        }
-        
-        .genre-box .genre-img {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          background: url('https://via.placeholder.com/400x300') no-repeat center center;
-          background-size: cover;
-          opacity: 0.4;
-          z-index: -1;
-        }
+
+       .genre-box {
+    background: #e2fbff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 6px 14px rgba(0, 150, 170, 0.1);
+    transition: 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.genre-box:hover {
+    background: #d1f7ff;
+}
+
+.genre-content {
+    flex: 1;
+}
+
+.genre-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #003b4c;
+    margin-bottom: 8px;
+}
+
+.genre-writer {
+    font-size: 16px;
+    color: #005a6c;
+    border-top: 1px solid #b8ecf4;
+    padding-top: 10px;
+}
+
+.genre-img-container {
+    flex-shrink: 0;
+}
+
+.genre-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 
         /* See More Button */
-        /* See More Button */
-.see-more-btn {
-  background-color: #00b6d4; /* Light blue */
-  color: white;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-top: 30px;
-  box-shadow: 0 10px 20px rgba(0, 183, 212, 0.3); /* Adds subtle shadow for depth */
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
+        .see-more-btn {
+            background-color: #00b6d4; /* Light blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(0, 183, 212, 0.3); /* Adds subtle shadow for depth */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-.see-more-btn:focus {
-  outline: none; /* Remove outline when focused */
-}
+        .see-more-btn:focus {
+            outline: none; /* Remove outline when focused */
+        }
 
-.see-more-btn:active {
-  transform: translateY(2px); /* Slight movement when clicked */
-}
-
+        .see-more-btn:active {
+            transform: translateY(2px); /* Slight movement when clicked */
+        }
 
     </style>
 </head>
 <body>
-  <!-- Navbar -->
-<header class="navbar">
-  <div class="navbar-container">
-    <div class="logo">LitZone</div>
-    <nav class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="#">Genres</a>
-      <a href="/writers.html">Writers</a>
-      <a href="#">Articles</a>
-      <a href="#">Contact</a>
-    </nav>
-  </div>
-</header>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">LitZone</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Genres</a>
+                <a href="writers.html">Writers</a>
+                <a href="log-in.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="genre-section">
-      <h2>Explore Genres</h2>
-      <p>Discover a variety of literary and academic genres. Each box shows the genre's title and the writer who contributed to it.</p>
+        <h2>Explore Genres</h2>
+        <p>Discover a variety of literary and academic genres. Each box shows the genre's title and the writer who contributed to it.</p>
 
-      <div class="genre-columns">
-        <!-- Column for Highest Two Genres -->
-        <div class="genre-column">
-          <h3>Highest 2 Genres</h3>
-          <div class="genre-boxes">
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Fantasy</div>
-              <div class="genre-writer">by Arif Mahmud</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Science Fiction</div>
-              <div class="genre-writer">by Nabila Chowdhury</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Science Fiction</div>
-              <div class="genre-writer">by Nabila Chowdhury</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Science Fiction</div>
-              <div class="genre-writer">by Nabila Chowdhury</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Science Fiction</div>
-              <div class="genre-writer">by Nabila Chowdhury</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Science Fiction</div>
-              <div class="genre-writer">by Nabila Chowdhury</div>
-            </a>
-          </div>
-        </div>
+        <div class="genre-columns">
+            <!-- Column for Highest Two Genres -->
+            <div class="genre-column">
+                <h3>Highest 2 Genres</h3>
+                <div class="genre-boxes">
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
 
-        <!-- Column for Latest Genres -->
-        <div class="genre-column">
-          <h3>Latest Genres</h3>
-          <div class="genre-boxes">
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Mystery</div>
-              <div class="genre-writer">by Tanjim Rahman</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Historical</div>
-              <div class="genre-writer">by Meherin Sultana</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Afrofuturism</div>
-              <div class="genre-writer">by Samiha Khatun</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Dark Academia</div>
-              <div class="genre-writer">by Tanvir Hasan</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Cyberpunk</div>
-              <div class="genre-writer">by Marzan Chowdhury</div>
-            </a>
-            <a href="#" class="genre-box">
-              <div class="genre-img"></div>
-              <div class="genre-title">Metafiction</div>
-              <div class="genre-writer">by Farzana Alam</div>
-            </a>
-          </div>
+                   <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+ <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                </div>
+            </div>
+
+            <!-- Column for Latest Genres -->
+            <div class="genre-column">
+                <h3>Latest Genres</h3>
+                <div class="genre-boxes">
+                 <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                     <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                    <a href="#" class="genre-box">
+  <div class="genre-content">
+    <div class="genre-title">Fantasy</div>
+    <div class="genre-writer">by Arif Mahmud</div>
+  </div>
+  <div class="genre-img-container">
+    <img src="https://via.placeholder.com/100x100" alt="Fantasy" class="genre-img" />
+  </div>
+</a>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- See More Button -->
-      <a href="#" class="see-more-btn">See More</a>
-      <a href="/index.html" class="see-more-btn">back</a>
+        
+        <!-- See More Button -->
+        <a href="#" class="see-more-btn">See More</a>
+     
     </section>
 </body>
 </html>

@@ -13,8 +13,7 @@
     font-family: 'Anek Bangla', sans-serif;
     margin: 0;
     padding: 0;
-    color: white;
-    
+    color: #01252b;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -22,51 +21,116 @@
     z-index: 1;
 }
 .image{
-    background-image: url(/images/maxresdefault.jpg);
+    background-image: url(/resources/maxresdefault.jpg);
     
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px 0;
-    position: relative;
-    
-    z-index: 3;
+/* ===== Navbar Section Start ===== */
+.navbar {
+  background-color: #05414f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: sans-serif;
-    
-    color: rgb(11, 227, 251);
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nav-links {
+  display: flex;
+  gap: 45px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 80%;
+    background-color: #05414f;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px;
+    gap: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
     display: flex;
-}
+    z-index: 1000;
+  }
 
-nav li {
-    margin-left: 20px;
+  .nav-links a {
+    font-size: 20px;
+    padding: 10px 0;
+    width: 100%;
+  }
 }
+/* ===== Navbar Section End ===== */
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-family: sans-serif;
-}
 
 .hero {
     background-color: rgba(0, 0, 0, 0.6);
@@ -81,19 +145,19 @@ nav a {
     padding: 20px;
     
 }
-
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
+    color: white;
+        margin-bottom: 35px;
 }
-
 .title {
-    font-size: 3.5em;
+    font-size: 1.5em;
     margin-bottom: -60px;
     line-height: 1.2;
     text-align: left;
+    color: #ffffff;
 }
-
 .author {
     font-size: 2.2em;
     margin-bottom: 20px;
@@ -102,11 +166,17 @@ nav a {
 }
 
 .text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    text-align: justify;
+  font-size: 1.9em;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  text-align: justify;
+  color: #ffffff;
+  padding: 20px 25px;
+  border-left: 5px solid #ffffff;
+  background: linear-gradient(to right, rgba(255, 87, 34, 0.05), rgba(255, 87, 34, 0.01));
+  border-radius: 10px;
 }
+
 
 .read-more-btn {
     background-color: white;
@@ -119,47 +189,13 @@ nav a {
     font-family: sans-serif;
 }
 
-.nav-links-container li a {
-    position: relative;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 8px 12px;
-    font-size: large;
-
-    transition: color 0.3s ease;
-}
-
-.nav-links-container li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #ff5722;
-    transition: width 0.3s ease;
-}
-
-.nav-links-container li a:hover::after {
-    width: 100%;
-}
-
-
-.menu-toggle {
-    display: none;
-}
-
-
-
-
-    /* Flip Card Styles */
+    
     .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 100px;
-      padding: 60px 20px;
+     display: flex
+;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
     }
 
     .flip-card {
@@ -211,9 +247,9 @@ nav a {
       transform: rotateY(180deg);
     }
 
-    .title {
+    .title2 {
       font-size: 1.7em;
-      font-weight: bold;
+      
       margin-bottom: 10px;
     }
 
@@ -476,88 +512,70 @@ nav a {
             }
         }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .nav-links-container {
-        display: none;
-        width: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)); /* Gradient */
-        text-align: center;
-        border-radius: 5px;
-        transition: display 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-    }
 
-    nav ul {
-        flex-direction: column;
-        padding: 20px; /* Increase padding */
-    }
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #fff;
+  margin-bottom: 20px;
 
-    nav li {
-        padding: 20px 0; /* Increase padding */
-        text-align: center;
-    }
+}
 
-    nav a {
-        display: block;
-        padding: 10px;
-        width: 100%;
-        transition: background-color 0.3s ease;
-        font-size: 1.1em; /* increase font size */
-    }
+.section-header h2 {
+  font-size: 3rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: inline-block;
+}
 
-    nav a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 8px auto 0;
+  border-radius: 1px;
+}
 
-    nav a.active {
-        font-weight: 600;
-        color: #ddd; /* make the active link more visible */
-    }
 
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 2.5em; /* increase size */
-        color: #ddd;
-        background: none;
-        border: none;
-        outline: none;
-        position: absolute;
-        top: 15px; /* adjust top position */
-        right: 15px; /* adjust right position */
-    }
-
-    .menu-toggle.active::before {
-        content: '✕';
-    }
+.section-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  font-family: 'Poppins', sans-serif;
 }
     </style>
 </head>
-<body>
+<div style="background-color: #01252b;">
+  <body>
     <div class="image">
-        <header>
-            <div class="container">
-                <div class="logo">SULPHIRIC BENCH</div>
-                <button class="menu-toggle">☰</button>
-                <div class="nav-links-container">
-                    <nav>
-                        <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="/genres.html">GENRES</a></li>
-                            <li><a href="/writers.html">WRITERS</a></li>
-                            <li><a href="/log-in.html">JOIN US</a></li>
-                            <li><a href="#">LOG IN</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        
+
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="logo">SULPHIRIC BENCH</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="genres.html">Genres</a>
+      <a href="#">Writers</a>
+      <a href="log-in.html">Join Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
     
         <section class="hero">
             <div class="hero-content">
@@ -570,14 +588,16 @@ nav a {
     </div>
 
     <section id="flip-cards-section">
-       <h2 style="text-align: center; color: #000000;">latest-articles</h2>
-<p style="color: black; text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque obcaecati voluptate ab aliquam consectetur veniam culpa quod voluptates illo, quaerat laudantium est a commodi aperiam id deleniti animi natus? Ad!</p>
+     <div class="section-header">
+  <h2>📰 Latest Articles</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque obcaecati voluptate ab aliquam consectetur veniam culpa quod voluptates illo, quaerat laudantium est a commodi aperiam id deleniti animi natus? Ad!</p>
+</div>
 
         <div class="card-container">
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p class="title2">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
                 <p>লেখক: রাফি রহমান</p>
               </div>
               <div class="flip-card-back">
@@ -591,7 +611,7 @@ nav a {
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p class="title2">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
                 <p>লেখক: রাফি রহমান</p>
               </div>
               <div class="flip-card-back">
@@ -605,7 +625,7 @@ nav a {
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p class="title2">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
                 <p>লেখক: রাফি রহমান</p>
               </div>
               <div class="flip-card-back">
@@ -619,7 +639,7 @@ nav a {
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <p class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
+                <p class="title2">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</p>
                 <p>লেখক: রাফি রহমান</p>
               </div>
               <div class="flip-card-back">
@@ -634,21 +654,47 @@ nav a {
 
 
       <section class="latest-articles">
-        <div class="section-header" style="color: #000; font-size: 40px">LATEST ARTICLE</div>
+      <div style="
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  position: relative;
+">
+  Top Article
+  <span style="
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 4px;
+    background: #c8b6b1;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  "></span>
+</div>
+
+
       
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
       
         <style>
-          .flip-book-section {
-            background: #f0f4ff;
-            font-family: 'Josefin Sans', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-          }
+      .flip-book-section {
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px; /* add padding instead of forced height */
+  padding-bottom: 40px;
+}
+
       
           .books-container {
             display: flex;
@@ -705,7 +751,7 @@ nav a {
             color: #000;
           }
       
-          .title {
+          .title1 {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 8px;
@@ -807,7 +853,7 @@ nav a {
           <div class="books-container">
             <div class="book">
               <div class="content">
-                <div class="title">Mystic Island</div>
+                <div class="title1">Mystic Island</div>
                 <div class="writer">by Sarah Lune</div>
                 <div class="description">A magical island where secrets unfold with every tide.</div>
                 <button class="read-btn">Read More</button>
@@ -817,7 +863,7 @@ nav a {
       
             <div class="book">
               <div class="content">
-                <div class="title">Beyond the Horizon</div>
+                <div class="title1">Beyond the Horizon</div>
                 <div class="writer">by Liam Noor</div>
                 <div class="description">A heartwarming journey of dreams, courage, and discovery.</div>
                 <button class="read-btn">Read More</button>
@@ -827,7 +873,7 @@ nav a {
       
             <div class="book">
               <div class="content">
-                <div class="title">The Crystal Code</div>
+                <div class="title1">The Crystal Code</div>
                 <div class="writer">by Ava Rami</div>
                 <div class="description">When AI takes over, only one can rewrite the code of fate.</div>
                 <button class="read-btn">Read More</button>
@@ -837,7 +883,7 @@ nav a {
       
             <div class="book">
               <div class="content">
-                <div class="title">Shadow Whispers</div>
+                <div class="title1">Shadow Whispers</div>
                 <div class="writer">by Ethan Roy</div>
                 <div class="description">Darkness has a voice. Will she dare to listen?</div>
                 <button class="read-btn">Read More</button>
@@ -848,13 +894,43 @@ nav a {
         </section>
       </section>
       
-    
+    <style>
+.genres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: -90px 0 40px 0; /* ↓ reduced top margin */
+}
+
+
+.bullet {
+  width: 15px;
+  height: 15px;
+  background-color: #00bcd4;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+.genre-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #00bcd4;
+  border-bottom: 4px solid #00bcd4;
+  padding-bottom: 8px;
+  font-family: 'Bebas Neue', sans-serif; /* Or your preferred modern font */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 3px;
+}
+
+    </style>
 
     <section>
-        <div class="genres">
-            <div class="bullet"></div>
-            <span style="color: #00bcd4; border-bottom: 2px solid #00bcd4; font-size: 89px; font-weight: 600; align-content: center; ">GENRES</span>
-        </div>
+       <div class="genres">
+  <div class="bullet"></div>
+  <h2 class="genre-title">GENRES</h2>
+</div>
+
         <div class="banner">
             <div class="slider" style="--quantity: 10">
               <div class="item" style="--position: 1">
@@ -933,48 +1009,57 @@ nav a {
       
 
     </section>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@500&display=swap');
-      
-      body {
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@500&display=swap');
+
+    body {
         margin: 0;
         padding: 0;
         background: #eafcff;
         font-family: 'Merriweather', serif;
-      }
-      
-      .latest-articles {
+    }
+
+    .latest-articles {
         padding: 70px 30px;
         text-align: center;
-      }
-      
-      .section-title {
-        font-size: 38px;
-        color: #003f4f;
-        margin-bottom: 50px;
-        position: relative;
-        letter-spacing: 1px;
-      }
-      
-      .section-title::after {
-        content: '';
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(to right, #00d4ff, #d0faff);
-        display: block;
-        margin: 14px auto 0;
-        border-radius: 5px;
-      }
-      
-      .articles-grid {
+    }
+.section-title {
+  text-align: center;
+  font-size: 2.5rem; /* Adjust size as needed */
+  color: #ffffff; /* Orange color */
+  margin-bottom: 30px; /* Adjust spacing */
+}
+
+.title-text {
+  background-color: #006381; /* Light background */
+  padding: 10px 20px; /* Padding for emphasis */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+/* Optional: Add a subtle pseudo-element for extra flair */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed for position relative to the main border */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px; /* Short line */
+    height: 3px;
+    background-color: #ff9900; /* Accent color */
+    border-radius: 5px; /* Rounded ends for softness */
+}
+
+    .articles-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 30px;
         max-width: 1500px;
         margin: auto;
-      }
-      
-      .card {
+    }
+
+    .card {
         background: #ffffff;
         border-radius: 20px;
         overflow: hidden;
@@ -985,144 +1070,176 @@ nav a {
         opacity: 0;
         transform: translateY(40px);
         animation-delay: var(--delay);
-      }
-      
-      @keyframes fadeUp {
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit text color */
+    }
+
+    @keyframes fadeUp {
         to {
-          opacity: 1;
-          transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
-      }
-      
-      .card-image {
+    }
+
+    .card-image {
         width: 100%;
         height: 200px;
         position: relative;
         background-size: cover;
         background-position: center;
-      }
-      
-      .card-image::after {
+    }
+
+    .card-image::after {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.05));
-      }
-      
-      .card-body {
+    }
+
+    .card-body {
         padding: 22px 20px;
         text-align: left;
         background: #fefefe;
-      }
-      
-      .card .writer,
-      .card .rating {
+    }
+
+    .card .writer,
+    .card .rating {
         font-size: 14px;
         color: #007a8c;
         margin-bottom: 6px;
-      }
-      
-      .card hr {
+    }
+
+    .card hr {
         width: 50px;
         height: 2px;
         background: linear-gradient(to right, #00d4ff, #ffffff);
         border: none;
         margin: 8px 0 12px;
         border-radius: 2px;
-      }
-      
-      .card .title {
-        font-size: 19px;
-        font-weight: bold;
-        color: #002830;
+    }
+
+    .card .title {
+        font-size: 22px; /* Increased font size */
+        font-weight: 700; /* Bold weight for more impact */
+        color: #002830; /* Retaining the original color */
         margin: 8px 0 12px;
-      }
-      
-      .card .description {
+        text-transform: uppercase; /* Uppercase for a modern touch */
+        letter-spacing: 1px; /* Slightly increased letter spacing */
+        transition: transform 0.3s; /* Smooth effect on hover */
+    }
+
+    .card .title:hover {
+        transform: translateY(-3px); /* Slight lift effect on hover */
+    }
+
+    .card .description {
         font-size: 15px;
         color: #2e2e2e;
         line-height: 1.5;
-      }
-      </style>
-      
-      <section class="latest-articles">
-        <div class="section-title">LATEST ARTICLES</div>
-        <div class="articles-grid">
-          <div class="card" style="--delay: 0s">
+    }
+
+    @media (max-width: 768px) {
+        .articles-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .articles-grid {
+            grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .card {
+        animation: fadeUp 1s ease forwards, float 3s ease-in-out infinite;
+    }
+</style>
+
+<section class="latest-articles">
+   <div class="section-title">
+  <span class="title-text">Latest Articles</span>
+</div>
+
+    <div class="articles-grid">
+        <a href="link-to-article1" class="card" style="--delay: 0s">
             <div class="card-image" style="background-image: url('your-image1.jpg');"></div>
             <div class="card-body">
-              <div class="writer">লেখক: রাফি রহমান</div>
-              <hr>
-              <div class="rating">রেটিং: 3.4 ★</div>
-              <hr>
-              <div class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</div>
-              <hr>
-              <div class="description">সাহিত্যিক কার্নিভালিজম সমাজে কীভাবে হাস্যরস ও সমালোচনার সমন্বয় ঘটায় তা ব্যাখ্যা করা হয়েছে।</div>
+                <div class="writer">লেখক: রাফি রহমান</div>
+                <hr>
+                <div class="rating">রেটিং: 3.4 ★</div>
+                <hr>
+                <div class="title">কার্নিভালিজম: এক নতুন দৃষ্টিভঙ্গি</div>
+                <hr>
+                <div class="description">সাহিত্যিক কার্নিভালিজম সমাজে কীভাবে হাস্যরস ও সমালোচনার সমন্বয় ঘটায় তা ব্যাখ্যা করা হয়েছে।</div>
             </div>
-          </div>
-      
-          <div class="card" style="--delay: 0.15s">
+        </a>
+
+        <a href="link-to-article2" class="card" style="--delay: 0.15s">
             <div class="card-image" style="background-image: url('your-image2.jpg');"></div>
             <div class="card-body">
-              <div class="writer">লেখক: সাদিয়া তাসনিম</div>
-              <hr>
-              <div class="rating">রেটিং: 3.9 ★</div>
-              <hr>
-              <div class="title">উৎসব ও সমাজ: কার্নিভালিজমের প্রভাব</div>
-              <hr>
-              <div class="description">উৎসব কিভাবে সামাজিক নিয়ম ভাঙতে সাহায্য করে এবং সাংস্কৃতিক বৈচিত্র্য তৈরি করে তা বিশ্লেষণ।</div>
+                <div class="writer">লেখক: সাদিয়া তাসনিম</div>
+                <hr>
+                <div class="rating">রেটিং: 3.9 ★</div>
+                <hr>
+                <div class="title">উৎসব ও সমাজ: কার্নিভালিজমের প্রভাব</div>
+                <hr>
+                <div class="description">উৎসব কিভাবে সামাজিক নিয়ম ভাঙতে সাহায্য করে এবং সাংস্কৃতিক বৈচিত্র্য তৈরি করে তা বিশ্লেষণ।</div>
             </div>
-          </div>
-      
-          <div class="card" style="--delay: 0.3s">
+        </a>
+
+        <a href="link-to-article3" class="card" style="--delay: 0.3s">
             <div class="card-image" style="background-image: url('your-image3.jpg');"></div>
             <div class="card-body">
-              <div class="writer">লেখক: তামিম হাসান</div>
-              <hr>
-              <div class="rating">রেটিং: 4.1 ★</div>
-              <hr>
-              <div class="title">কার্নিভালিজম ও জনপ্রিয় সাহিত্য</div>
-              <hr>
-              <div class="description">জনপ্রিয় সাহিত্যে কার্নিভালিজমের উপস্থিতি এবং পাঠকের মনে এর সৃষ্ট প্রতিক্রিয়া আলোচনা।</div>
+                <div class="writer">লেখক: তামিম হাসান</div>
+                <hr>
+                <div class="rating">রেটিং: 4.1 ★</div>
+                <hr>
+                <div class="title">কার্নিভালিজম ও জনপ্রিয় সাহিত্য</div>
+                <hr>
+                <div class="description">জনপ্রিয় সাহিত্যে কার্নিভালিজমের উপস্থিতি এবং পাঠকের মনে এর সৃষ্ট প্রতিক্রিয়া আলোচনা।</div>
             </div>
-          </div>
-      
-          <div class="card" style="--delay: 0.45s">
+        </a>
+
+        <a href="link-to-article4" class="card" style="--delay: 0.45s">
             <div class="card-image" style="background-image: url('your-image4.jpg');"></div>
             <div class="card-body">
-              <div class="writer">লেখক: জান্নাতুল নাইম</div>
-              <hr>
-              <div class="rating">রেটিং: 4.3 ★</div>
-              <hr>
-              <div class="title">কার্নিভালিজম: ইতিহাস ও আধুনিকতা</div>
-              <hr>
-              <div class="description">কার্নিভালিজমের ঐতিহাসিক উৎস এবং এটি আজকের সাহিত্যিক পরিবেশে কিভাবে টিকে আছে তা বিশ্লেষণ।</div>
+                <div class="writer">লেখক: জান্নাতুল নাইম</div>
+                <hr>
+                <div class="rating">রেটিং: 4.3 ★</div>
+                <hr>
+                <div class="title">কার্নিভালিজম: ইতিহাস ও আধুনিকতা</div>
+                <hr>
+                <div class="description">কার্নিভালিজমের ঐতিহাসিক উৎস এবং এটি আজকের সাহিত্যিক পরিবেশে কিভাবে টিকে আছে তা বিশ্লেষণ।</div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      </section>
+        </a>
+    </div>
+</section>
       
       
-      
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinksContainer = document.querySelector('.nav-links-container');
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-            menuToggle.addEventListener('click', function() {
-                if (navLinksContainer.style.display === 'block') {
-                    navLinksContainer.style.display = 'none';
-                } else {
-                    navLinksContainer.style.display = 'block';
-                }
-                this.classList.toggle('active');
-                console.log("Menu Toggle Clicked");
-                console.log("Nav Links Container Display:", navLinksContainer.style.display);
-                console.log("Menu Toggle ClassList:", this.classList);
-            });
-        });
-    </script>
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  });
+</script>
+
+
 </body>
+</div>
 </html>
